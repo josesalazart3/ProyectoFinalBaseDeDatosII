@@ -1,0 +1,16 @@
+|ANIO |CODIGO_ENFERMEDAD|NOMBRE_ENFERMEDAD                             |NUM_SUSPENSIONES|TOTAL_PAGADO|
+|-----|-----------------|----------------------------------------------|----------------|------------|
+|2.025|PSI008           |Trastorno límite de personalidad descompensado|2               |31.800      |
+|2.025|QUI001           |Estado postoperatorio mayor                   |1               |1.800       |
+|2.025|REN001           |Insuficiencia renal aguda                     |1               |800         |
+|2.025|REN005           |Síndrome nefrótico                            |1               |22.650      |
+|2.024|HEM005           |Síndrome mielodisplásico                      |10              |265.625     |
+|2.024|TRO005           |Lepra lepromatosa                             |2               |283.000     |
+|2.024|ALG001           |Anafilaxia severa                             |2               |232.300     |
+|2.024|ALG002           |Angioedema hereditario                        |2               |243.700     |
+|2.024|GIN001           |Endometriosis severa                          |1               |600.000     |
+|2.025|GIN001           |Endometriosis severa                          |1               |1.100.000   |
+|2.025|GIN004           |Adenomiosis uterina                           |1               |1.150.000   |
+|2.025|GIN002           |Enfermedad inflamatoria pélvica aguda         |1               |750.000     |
+|2.024|GIN004           |Adenomiosis uterina                           |1               |1.100.000   |
+|2.024|GIN003           |Miomatosis uterina sintomática                |1               |800.000     |

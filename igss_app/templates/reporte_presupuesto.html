@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Reporte Presupuesto</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+    <div class="container mt-5">
+        <h2 class="mb-4">📊 Ejecución presupuestaria por año</h2>
+        <canvas id="grafica"></canvas>
+        <a href="/" class="btn btn-secondary mt-3">← Volver</a>
+    </div>
+
+    <script>
+        const ctx = document.getElementById('grafica');
+        const chart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: {{ anios|tojson }},
+                datasets: [
+                    {
+                        label: 'Monto Asignado (Q)',
+                        data: {{ asignado|tojson }},
+                        backgroundColor: 'rgba(54, 162, 235, 0.7)'
+                    },
+                    {
+                        label: 'Monto Ejecutado (Q)',
+                        data: {{ ejecutado|tojson }},
+                        backgroundColor: 'rgba(255, 99, 132, 0.7)'
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+{% block title %}Dashboard{% endblock %}
+
+{% block content %}
+<h2 class="mb-4">📊 Dashboard IGSS</h2>
+
+<div class="row mb-4">
+    <div class="col-md-3">
+        <div class="card text-bg-primary mb-3">
+            <div class="card-body">
+                <h5 class="card-title">Afiliados activos</h5>
+                <p class="card-text display-6">{{ total_afiliados }}</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card text-bg-warning mb-3">
+            <div class="card-body">
+                <h5 class="card-title">Suspensiones</h5>
+                <p class="card-text display-6">{{ total_suspensiones }}</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card text-bg-success mb-3">
+            <div class="card-body">
+                <h5 class="card-title">Total pagado</h5>
+                <p class="card-text display-6">Q {{ "%.2f"|format(total_pagado) }}</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card text-bg-info mb-3">
+            <div class="card-body">
+                <h5 class="card-title">Presupuesto asignado</h5>
+                <p class="card-text display-6">Q {{ "%.2f"|format(total_asignado) }}</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<canvas id="graficaResumen" height="100"></canvas>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+    const ctx = document.getElementById('graficaResumen').getContext('2d');
+    new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: ['Afiliados', 'Suspensiones', 'Pagado (Q)', 'Presupuesto (Q)'],
+            datasets: [{
+                label: 'Resumen General',
+                data: [
+                    {{ total_afiliados }},
+                    {{ total_suspensiones }},
+                    {{ total_pagado }},
+                    {{ total_asignado }}
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            responsive: true,
+            plugins: {
+                legend: { display: false }
+            },
+            scales: {
+                y: { beginAtZero: true }
+            }
+        }
+    });
+</script>
+{% endblock %}

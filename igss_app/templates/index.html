@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block title %}Afiliados IGSS{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1 class="mb-4">📋 Afiliados Activos</h1>
+
+    <table class="table table-bordered table-striped">
+        <thead class="table-dark">
+            <tr>
+                <th>CUI</th>
+                <th>Nombre completo</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for afiliado in afiliados %}
+            <tr>
+                <td>{{ afiliado[0] }}</td>
+                <td>{{ afiliado[1] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="/reporte-presupuesto" class="btn btn-primary mt-3">📈 Ver reporte presupuestario</a>
+</div>
+{% endblock %}

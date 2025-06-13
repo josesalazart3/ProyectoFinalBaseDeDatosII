@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block title %}Reporte de Enfermedades Comunes{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h2 class="mb-4">📊 Enfermedades más comunes</h2>
+    <canvas id="graficaEnfermedades" width="800" height="400"></canvas>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+    const ctx = document.getElementById('graficaEnfermedades').getContext('2d');
+    const chart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: {{ enfermedades|tojson }},
+            datasets: [{
+                label: 'Número de Suspensiones',
+                data: {{ totales|tojson }},
+                backgroundColor: 'rgba(54, 162, 235, 0.7)'
+            }]
+        },
+        options: {
+            responsive: true,
+            indexAxis: 'y',
+            scales: {
+                x: {
+                    beginAtZero: true,
+                    title: {
+                        display: true,
+                        text: 'Cantidad de Suspensiones'
+                    }
+                }
+            }
+        }
+    });
+</script>
+{% endblock %}

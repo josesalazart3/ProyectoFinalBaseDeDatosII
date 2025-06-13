@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% block title %}Filtrar Pagos por Fechas{% endblock %}
+
+{% block content %}
+<h2 class="mb-4">📅 Reporte de pagos por rango de fechas</h2>
+
+<form method="POST" class="row g-3 mb-4">
+    <div class="col-md-5">
+        <label for="fecha_inicio" class="form-label">Fecha inicio</label>
+        <input type="date" id="fecha_inicio" name="fecha_inicio" value="{{ fecha_inicio }}" class="form-control" required>
+    </div>
+    <div class="col-md-5">
+        <label for="fecha_fin" class="form-label">Fecha fin</label>
+        <input type="date" id="fecha_fin" name="fecha_fin" value="{{ fecha_fin }}" class="form-control" required>
+    </div>
+    <div class="col-md-2 d-flex align-items-end">
+        <button type="submit" class="btn btn-success w-100">Filtrar</button>
+    </div>
+</form>
+
+{% if datos %}
+<table class="table table-bordered table-striped">
+    <thead class="table-dark">
+        <tr>
+            <th>CUI</th>
+            <th>Nombre Completo</th>
+            <th>Total Pagado (Q)</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for fila in datos %}
+        <tr>
+            <td>{{ fila[0] }}</td>
+            <td>{{ fila[1] }}</td>
+            <td>Q {{ "%.2f"|format(fila[2]) }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% else %}
+<p class="text-muted">No hay resultados para el rango de fechas seleccionado.</p>
+{% endif %}
+{% endblock %}

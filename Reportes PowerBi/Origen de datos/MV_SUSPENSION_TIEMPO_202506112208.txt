@@ -1,0 +1,2 @@
+|ANIO|MES|NOMBRE_MES|DIA_SEMANA|TOTAL_SUSPENSIONES|TOTAL_PAGADO|
+|----|---|----------|----------|------------------|------------|

@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block title %}Reporte de Pagos por Afiliado{% endblock %}
+
+{% block content %}
+<h2 class="mb-4">💵 Pagos Totales por Afiliado</h2>
+
+<table class="table table-striped table-bordered">
+    <thead class="table-dark">
+        <tr>
+            <th>CUI</th>
+            <th>Nombre Completo</th>
+            <th>Total Pagado (Q)</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for row in datos %}
+        <tr>
+            <td>{{ row[0] }}</td>
+            <td>{{ row[1] }}</td>
+            <td>Q{{ "{:,.2f}".format(row[2]) }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

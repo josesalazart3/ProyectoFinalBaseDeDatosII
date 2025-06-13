@@ -1,0 +1,15 @@
+"ANIO","CODIGO_ENFERMEDAD","NOMBRE_ENFERMEDAD","NUM_SUSPENSIONES","TOTAL_PAGADO"
+2025,PSI008,Trastorno límite de personalidad descompensado,2,31800
+2025,QUI001,Estado postoperatorio mayor,1,1800
+2025,REN001,Insuficiencia renal aguda,1,800
+2025,REN005,Síndrome nefrótico,1,22650
+2024,HEM005,Síndrome mielodisplásico,10,265625
+2024,TRO005,Lepra lepromatosa,2,283000
+2024,ALG001,Anafilaxia severa,2,232300
+2024,ALG002,Angioedema hereditario,2,243700
+2024,GIN001,Endometriosis severa,1,600000
+2025,GIN001,Endometriosis severa,1,1100000
+2025,GIN004,Adenomiosis uterina,1,1150000
+2025,GIN002,Enfermedad inflamatoria pélvica aguda,1,750000
+2024,GIN004,Adenomiosis uterina,1,1100000
+2024,GIN003,Miomatosis uterina sintomática,1,800000
